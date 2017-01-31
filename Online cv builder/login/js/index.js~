@@ -1,0 +1,99 @@
+$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+  
+  var $this = $(this),
+      label = $this.prev('label');
+
+	  if (e.type === 'keyup') {
+			if ($this.val() === '') {
+          label.removeClass('active highlight');
+        } else {
+          label.addClass('active highlight');
+        }
+    } else if (e.type === 'blur') {
+    	if( $this.val() === '' ) {
+    		label.removeClass('active highlight'); 
+			} else {
+		    label.removeClass('highlight');   
+			}   
+    } else if (e.type === 'focus') {
+      
+      if( $this.val() === '' ) {
+    		label.removeClass('highlight'); 
+			} 
+      else if( $this.val() !== '' ) {
+		    label.addClass('highlight');
+			}
+    }
+    
+    
+var counter = 0;
+
+function moreFields() {
+	counter++;
+	var newFields = document.getElementById('readroot').cloneNode(true);
+	newFields.id = '';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName + counter;
+	}
+	var insertHere = document.getElementById('writeroot');
+	insertHere.parentNode.insertBefore(newFields,insertHere);
+}
+
+window.onload = moreFields;
+
+});
+
+$('.tab a').on('click', function (e) {
+  
+  e.preventDefault();
+  
+  $(this).parent().addClass('active');
+  $(this).parent().siblings().removeClass('active');
+  
+  target = $(this).attr('href');
+
+  $('.tab-content > div').not(target).hide();
+  
+  $(target).fadeIn(600);
+  
+});
+
+
+jQuery(function($){
+	var $course = $('#course1'), count = 1;
+	$('#addemail').click(function(e){
+		e.preventDefault();
+		var idname1 = 'course' + (++count);
+		$course.parent().append($course.clone().attr({id: idname1, name: idname1}));
+	});
+	
+	var $job_title = $('#job1'), count1 = 1;
+	$('#addemail').click(function(e){
+		e.preventDefault();
+		var idname2 = 'job_title' + (++count1);
+		$job_title.parent().append($job_title.clone().attr({id: idname2, name: idname2}));
+	});
+	
+	var $s_d = $('#s_d1'), count2 = 1;
+	$('#addemail').click(function(e){
+		e.preventDefault();
+		var idname3 = 's_d' + (++count2);
+		$s_d.parent().append($s_d.clone().attr({id: idname3, name: idname3}));
+	});
+	
+	var $e_d = $('#e_d1'), count3 = 1;
+	$('#addemail').click(function(e){
+		e.preventDefault();
+		var idname4 = 'e_d' + (++count3);
+		$e_d.parent().append($e_d.clone().attr({id: idname4, name: idname4}));
+	});		
+	
+});
+
+
+
+
