@@ -160,13 +160,6 @@
 	   url: mailChimpURL
 
 	});
-$('li').click(function(){
-     $(this).unbind("mouseenter mouseleave");
-});
-
-
-		
-
 
 	// Mailchimp translation
 	//
