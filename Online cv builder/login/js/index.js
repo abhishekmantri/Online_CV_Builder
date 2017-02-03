@@ -43,3 +43,29 @@ $('.tab a').on('click', function (e) {
 });
 
 
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker1" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker3" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker4" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker5" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker6" ).datepicker();
+  } );
+  $( function() {
+    $( "#datepicker7" ).datepicker();
+  } );	
+
+
